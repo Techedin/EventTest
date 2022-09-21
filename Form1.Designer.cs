@@ -42,21 +42,31 @@ namespace EventTest
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.DrawCards = new System.Windows.Forms.Button();
+            this.Card1 = new System.Windows.Forms.PictureBox();
+            this.Card2 = new System.Windows.Forms.PictureBox();
+            this.Card3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Card1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Card2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Card3)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(50, 32);
+            this.button1.Location = new System.Drawing.Point(3, 62);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 46);
+            this.button1.Size = new System.Drawing.Size(146, 31);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Clickable button";
+            this.button1.Text = "Write to File";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
             // 
             // textBox1
             // 
@@ -157,12 +167,90 @@ namespace EventTest
             // 
             this.pictureBox1.BackgroundImage = global::EventTest.Properties.Resources._5_The_Player_Guild;
             this.pictureBox1.Image = global::EventTest.Properties.Resources._5_The_Player_Guild;
-            this.pictureBox1.Location = new System.Drawing.Point(505, 62);
+            this.pictureBox1.Location = new System.Drawing.Point(717, 62);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(261, 227);
+            this.pictureBox1.Size = new System.Drawing.Size(129, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(22, 28);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(252, 20);
+            this.textBox4.TabIndex = 12;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.Control;
+            this.label5.Location = new System.Drawing.Point(-2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(298, 25);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Write Something to the File";
+            // 
+            // button5
+            // 
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button5.Location = new System.Drawing.Point(191, 62);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(146, 31);
+            this.button5.TabIndex = 14;
+            this.button5.Text = "Read the File";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(280, 28);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(122, 20);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "Clear Current File";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // DrawCards
+            // 
+            this.DrawCards.Location = new System.Drawing.Point(464, 121);
+            this.DrawCards.Name = "DrawCards";
+            this.DrawCards.Size = new System.Drawing.Size(118, 37);
+            this.DrawCards.TabIndex = 16;
+            this.DrawCards.Text = "Click to Draw Some Cards";
+            this.DrawCards.UseVisualStyleBackColor = true;
+            this.DrawCards.Click += new System.EventHandler(this.DrawCards_Click);
+            // 
+            // Card1
+            // 
+            this.Card1.Location = new System.Drawing.Point(329, 221);
+            this.Card1.Name = "Card1";
+            this.Card1.Size = new System.Drawing.Size(127, 167);
+            this.Card1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Card1.TabIndex = 17;
+            this.Card1.TabStop = false;
+            // 
+            // Card2
+            // 
+            this.Card2.Location = new System.Drawing.Point(464, 221);
+            this.Card2.Name = "Card2";
+            this.Card2.Size = new System.Drawing.Size(127, 167);
+            this.Card2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Card2.TabIndex = 18;
+            this.Card2.TabStop = false;
+
+            // 
+            // Card3
+            // 
+            this.Card3.Location = new System.Drawing.Point(597, 221);
+            this.Card3.Name = "Card3";
+            this.Card3.Size = new System.Drawing.Size(127, 167);
+            this.Card3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Card3.TabIndex = 19;
+            this.Card3.TabStop = false;
             // 
             // Form1
             // 
@@ -170,6 +258,14 @@ namespace EventTest
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(858, 450);
+            this.Controls.Add(this.Card3);
+            this.Controls.Add(this.Card2);
+            this.Controls.Add(this.Card1);
+            this.Controls.Add(this.DrawCards);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -187,6 +283,9 @@ namespace EventTest
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Card1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Card2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Card3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -206,6 +305,14 @@ namespace EventTest
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button DrawCards;
+        private System.Windows.Forms.PictureBox Card1;
+        private System.Windows.Forms.PictureBox Card2;
+        private System.Windows.Forms.PictureBox Card3;
     }
 }
 

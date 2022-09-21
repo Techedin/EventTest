@@ -15,19 +15,43 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace EventTest
 {
 
     public partial class Form1 : Form
     {
+
+        string textFile = "file.txt";
+        Image[] images = new Image[14];
+        PictureBox[] cardDisplay = new PictureBox[3];
         int number;
         int die;
         double numToRound;
+        bool isDrawn;
+
         public Form1()
         {
             InitializeComponent();
+            images[0] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/1.JPG");
+            images[1] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/2.PnG");
+            images[2] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/3.PnG");
+            images[3] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/4.PnG");
+            images[4] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/5.PnG");
+            images[5] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/6.PnG");
+            images[6] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/7.PnG");
+            images[7] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/8.PnG");
+            images[8] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/9.PnG");
+            images[9] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/10.PnG");
+            images[10] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/11.JPG");
+            images[11] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/12.PnG");
+            images[12] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/13.PnG");
+            images[13] = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/14.PnG");
+            cardDisplay[0] = Card1;
+            cardDisplay[1] = Card2;
+            cardDisplay[2] = Card3;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,15 +61,41 @@ namespace EventTest
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Button source = (Button)sender;
-            source.BackColor = Color.Aquamarine;
-            MessageBox.Show("The button's text is:" + source.Text);
+            string str = textBox4.Text;
 
+
+
+            if (Regex.IsMatch(str, "^[a-zA-Z0-9]*$"))
+            {
+                MessageBox.Show("valid string a-z, 0-9");
+                using (StreamWriter fileWriter = File.AppendText(textFile))
+                {
+                    fileWriter.WriteLine(textBox4.Text.ToString());
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("NOT VALID char or #");
+            }
         }
-
-        private void button1_MouseClick(object sender, MouseEventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("The mouse was clicked at(" + e.X + ", " + e.Y + ")");
+            if (File.Exists(textFile))
+            {
+                string[] linesInFile = File.ReadAllLines(textFile);
+                using (StreamReader file = new StreamReader(textFile))
+                    foreach (string line in linesInFile)
+                    {
+                        MessageBox.Show(line);
+                        textBox4.Text = line;
+                    }
+            }
+            else
+            {
+                MessageBox.Show("File doesn't exist yet");
+            }
+
         }
 
 
@@ -101,5 +151,26 @@ namespace EventTest
                 MessageBox.Show("Not a Valid Number");
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            File.Delete(textFile);
+        }
+
+        private void DrawCards_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            DrawCards(3);
+            void DrawCards(int i)
+            {
+                for (int k = 0; k < i; k++)
+                {
+                    cardDisplay[k].Image = images[random.Next(0, 13)];
+                }
+                isDrawn = true;
+            }
+        }
+
+
     }
 }
