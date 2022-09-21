@@ -167,9 +167,6 @@
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
     <value>134, 119</value>
   </data>
@@ -196,9 +193,6 @@
   </data>
   <data name="&gt;&gt;Card2.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>18</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 31</value>
@@ -4181,8 +4175,8 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="textBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>252, 20</value>
+  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
     <value>134, 200</value>
@@ -4205,6 +4199,9 @@
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <data name="textBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>252, 20</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
@@ -4213,9 +4210,6 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button4.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
   <data name="Card1.Size" type="System.Drawing.Size, System.Drawing">
@@ -4230,8 +4224,8 @@
   <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 297</value>
   </data>
-  <data name="&gt;&gt;DrawCards.Name" xml:space="preserve">
-    <value>DrawCards</value>
+  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -4320,6 +4314,9 @@
   <data name="&gt;&gt;Card3.Name" xml:space="preserve">
     <value>Card3</value>
   </data>
+  <data name="DrawCards.Location" type="System.Drawing.Point, System.Drawing">
+    <value>464, 121</value>
+  </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
   </data>
@@ -4356,9 +4353,6 @@
   <data name="&gt;&gt;textBox4.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
-  </data>
   <data name="Card3.Location" type="System.Drawing.Point, System.Drawing">
     <value>597, 221</value>
   </data>
@@ -4368,8 +4362,8 @@
   <data name="button6.Location" type="System.Drawing.Point, System.Drawing">
     <value>280, 28</value>
   </data>
-  <data name="textBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 28</value>
+  <data name="&gt;&gt;DrawCards.Name" xml:space="preserve">
+    <value>DrawCards</value>
   </data>
   <data name="&gt;&gt;Card1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -4380,6 +4374,9 @@
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
   <data name="&gt;&gt;Card2.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -4389,15 +4386,12 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
+  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Enter In a Number
  with more than 3 decimals</value>
-  </data>
-  <data name="&gt;&gt;textBox3.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="button3.Text" xml:space="preserve">
     <value>Round to 2 decimal places</value>
@@ -4448,6 +4442,9 @@
   <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <data name="&gt;&gt;Card3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -4472,6 +4469,9 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>858, 450</value>
   </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;Card1.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -4484,8 +4484,8 @@
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 41</value>
   </data>
-  <data name="&gt;&gt;Card3.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="textBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 28</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Check Integer</value>
@@ -4523,8 +4523,8 @@
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>428, 39</value>
   </data>
-  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
-    <value>15</value>
+  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
   <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
     <value>$this</value>
@@ -4532,8 +4532,8 @@
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="DrawCards.Location" type="System.Drawing.Point, System.Drawing">
-    <value>464, 121</value>
+  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
+    <value>textBox2</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>17</value>
@@ -4541,7 +4541,7 @@
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
