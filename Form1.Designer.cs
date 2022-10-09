@@ -59,6 +59,7 @@ namespace EventTest
             this.label9 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.GroceryTextbox = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -71,8 +72,8 @@ namespace EventTest
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label10 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Card3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Card2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Card1)).BeginInit();
@@ -86,9 +87,9 @@ namespace EventTest
             // 
             // button1
             // 
+            resources.ApplyResources(this.button1, "button1");
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
@@ -114,9 +115,9 @@ namespace EventTest
             // 
             // button5
             // 
+            resources.ApplyResources(this.button5, "button5");
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            resources.ApplyResources(this.button5, "button5");
             this.button5.Name = "button5";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
@@ -147,12 +148,14 @@ namespace EventTest
             resources.ApplyResources(this.Card2, "Card2");
             this.Card2.Name = "Card2";
             this.Card2.TabStop = false;
+            this.Card2.Click += new System.EventHandler(this.Card2_Click);
             // 
             // Card1
             // 
             resources.ApplyResources(this.Card1, "Card1");
             this.Card1.Name = "Card1";
             this.Card1.TabStop = false;
+            this.Card1.Click += new System.EventHandler(this.Card1_Click);
             // 
             // pictureBox1
             // 
@@ -290,6 +293,17 @@ namespace EventTest
             this.GroceryTextbox.Name = "GroceryTextbox";
             this.GroceryTextbox.TextChanged += new System.EventHandler(this.textBox5_TextChanged_1);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.textBox4);
+            this.tabPage2.Controls.Add(this.button5);
+            this.tabPage2.Controls.Add(this.button6);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // textBox1
             // 
             resources.ApplyResources(this.textBox1, "textBox1");
@@ -357,21 +371,14 @@ namespace EventTest
             // 
             // monthCalendar1
             // 
+            this.monthCalendar1.BackColor = System.Drawing.SystemColors.MenuText;
+            this.monthCalendar1.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.monthCalendar1, "monthCalendar1");
             this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TitleForeColor = System.Drawing.SystemColors.Highlight;
+            this.monthCalendar1.TrailingForeColor = System.Drawing.SystemColors.Desktop;
             this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.textBox4);
-            this.tabPage2.Controls.Add(this.button5);
-            this.tabPage2.Controls.Add(this.button6);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -380,11 +387,19 @@ namespace EventTest
             this.label10.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label10.Name = "label10";
             // 
+            // button4
+            // 
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.button3);
@@ -471,6 +486,7 @@ namespace EventTest
         private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button button4;
     }
 }
 

@@ -73,7 +73,7 @@ namespace EventTest
                 MessageBox.Show("Real player name: " + firstName + " " + lastName);
                 MessageBox.Show("Player tag:" + playerName);
 
-              
+
             }
             public string getfName()
             {
@@ -290,7 +290,7 @@ namespace EventTest
             Button checkButton = new Button();
             Button cancelButton = new Button();
 
-
+            Font LargeFont = new Font("Arial", 10);
 
             label.Text = "Please Enter Player Name to play cards";
 
@@ -299,11 +299,13 @@ namespace EventTest
             // Set the text of button2 to "Cancel".
             cancelButton.Text = "Cancel";
             //Set location of all components
-            label.SetBounds(36, 36, 372, 13);
+            label.SetBounds(36, 36, 372, 20);
+            label.Font = LargeFont;
             textBox.SetBounds(36, 86, 700, 20);
             checkButton.SetBounds(228, 160, 160, 60);
             cancelButton.SetBounds(400, 160, 160, 60);
-
+            checkButton.BackgroundImage = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/Resources/gold.JPG");
+            cancelButton.BackgroundImage = Image.FromFile("C:/Users/Techedin/source/repos/CSC202 Projects/EventTest/Resources/gold.JPG");
             // Make button1's dialog result OK.
             checkButton.DialogResult = DialogResult.OK;
             // Make button2's dialog result Cancel.
@@ -317,7 +319,7 @@ namespace EventTest
             popUp.StartPosition = FormStartPosition.CenterScreen;
             popUp.MinimizeBox = false;
             popUp.MaximizeBox = false;
-
+            popUp.BackColor = Color.Maroon;
             //Additional formating
             // Define the border style of the form to a dialog box.
             popUp.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -346,12 +348,12 @@ namespace EventTest
             {
                 if (playerNames.Contains(textBox.Text) == true)
                 {
-                    MessageBox.Show("The player is in the system");
+                    MessageBox.Show("Player ID Confirmed");
                     isPlayer = true;
                 }
                 else
                 {
-                    MessageBox.Show("The player id need to be created");
+                    MessageBox.Show("A Player ID needs to be created to play card");
                 }
                 // Optional: Call the Dispose method when you are finished with the dialog box.
                 popUp.Dispose();
@@ -359,7 +361,7 @@ namespace EventTest
             else
             {
                 // Display a message box indicating that the Cancel button was clicked.
-                MessageBox.Show("The Cancel button on the form was clicked.");
+                MessageBox.Show("Player ID check was canceled");
                 // Optional: Call the Dispose method when you are finished with the dialog box.
                 popUp.Dispose();
             }
@@ -528,10 +530,14 @@ namespace EventTest
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //Check if textboxes have values
             if (String.IsNullOrEmpty(textBox1.Text) != true && String.IsNullOrEmpty(textBox2.Text) != true && String.IsNullOrEmpty(textBox3.Text) != true)
             {
+                //Create player refernce 
                 Player player = new Player(textBox1.Text, textBox2.Text, textBox3.Text);
+                //Call Add Player
                 player.AddPlayer(player);
+                //Add player name to list for checking purposes
                 playerNames.Add(player.getpName());
             }
             else
@@ -543,12 +549,17 @@ namespace EventTest
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //Check if textboxes have values
             if (String.IsNullOrEmpty(textBox1.Text) != true && String.IsNullOrEmpty(textBox2.Text) != true && String.IsNullOrEmpty(textBox3.Text) != true)
             {
+                //Check for int in textbox 5
                 if (int.TryParse(textBox5.Text, out gambleAmount))
                 {
+                    //Create gambler reference
                     Gambler gambler = new Gambler(textBox1.Text, textBox2.Text, textBox3.Text, gambleAmount, monthCalendar1.SelectionStart);
+                    //Call add player
                     gambler.AddPlayer(gambler);
+                    //Check for 21 or over
                     if (gambler.getIs21() == true)
                     {
 
@@ -576,6 +587,22 @@ namespace EventTest
 
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Exit Application
+            Application.Exit();
+        }
+
+        private void Card1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Card2_Click(object sender, EventArgs e)
         {
 
         }

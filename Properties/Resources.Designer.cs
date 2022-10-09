@@ -63,6 +63,16 @@ namespace EventTest.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _360_F_170260833_vbS1wr88qZkVaWjC5FjmBo5MLf9Oxs1i {
+            get {
+                object obj = ResourceManager.GetObject("360_F_170260833_vbS1wr88qZkVaWjC5FjmBo5MLf9Oxs1i", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _5_The_Player_Guild {
             get {
                 object obj = ResourceManager.GetObject("5 The Player Guild", resourceCulture);
