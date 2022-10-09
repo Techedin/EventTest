@@ -16,6 +16,10 @@ Comments and more loops
 Ben Williams 10-2-22
 Estimated Hours Taken: 2-4 Hours
 Adding more string manipulation, lists, design
+
+Ben Williams 10-6-22 / 10-8-22
+Estimated Hours Taken: 4-6 Hours
+Rehauling Look and Purpose while putting inheritance
 */
 
 
@@ -38,16 +42,116 @@ namespace EventTest
     public partial class Form1 : Form
     {
 
+
+        public bool isPlayer;
+
         string textFile = "file.txt";
 
         Image[] images = new Image[14];
         PictureBox[] cardDisplay = new PictureBox[3];
 
-        int number;
-        int die;
-        double numToRound;
-
         List<string> groceries = new List<string>();
+
+        List<string> playerNames = new List<string>();
+
+        int gambleAmount;
+        public class Player
+        {
+            protected string firstName;
+            protected string lastName;
+            protected string playerName;
+
+            public Player(string fName, string lName, string pName)
+            {
+                this.firstName = fName;
+                this.lastName = lName;
+                this.playerName = pName;
+
+            }
+            public void AddPlayer(Player player)
+            {
+                MessageBox.Show("Real player name: " + firstName + " " + lastName);
+                MessageBox.Show("Player tag:" + playerName);
+
+              
+            }
+            public string getfName()
+            {
+                return firstName;
+            }
+            public string getlName()
+            {
+                return lastName;
+            }
+            public string getpName()
+            {
+                return playerName;
+            }
+
+        }
+
+        public class Gambler : Player
+        {
+            private int potAmount;
+            private DateTime date;
+            private bool is21 = false;
+            public Gambler(string fName, string lName, string pName, int money, DateTime birthdate) : base(fName, lName, pName)
+            {
+                potAmount = money;
+                date = birthdate;
+
+            }
+
+            public void AddPlayer(Gambler gambler)
+            {
+                CheckAge();
+                if (is21 == true)
+                {
+                    MessageBox.Show("Real player name: " + firstName + " " + lastName);
+                    MessageBox.Show("Player tag:" + playerName);
+                    MessageBox.Show("Gamble Amount: " + potAmount);
+                }
+                else
+                {
+                    MessageBox.Show("Must Be Over 21 to Gamble");
+                }
+
+
+            }
+
+            public void CheckAge()
+            {
+                if (date.Year <= 2000)
+                {
+                    is21 = true;
+                }
+                else
+                {
+                    is21 = false;
+                }
+
+            }
+
+            public int getMoneyAmount()
+            {
+                return potAmount;
+            }
+
+            public DateTime getBirthdate()
+            {
+                CheckAge();
+                return date;
+            }
+
+            public bool getIs21()
+            {
+                return is21;
+            }
+
+
+
+        }
+
 
         public Form1()
         {
@@ -72,6 +176,7 @@ namespace EventTest
             cardDisplay[1] = Card2;
             cardDisplay[2] = Card3;
 
+            isPlayer = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -140,46 +245,8 @@ namespace EventTest
 
         }
 
-        private void RoundButton_Click(object sender, EventArgs e)
-        {
-            //Check Text Box for a double
-            if (double.TryParse(textBox2.Text, out numToRound))
-            {
-                //Round to two decimal points
-                numToRound = Math.Round((Double)numToRound, 2);
-                textBox2.Text = numToRound.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Not A Valid Number");
-            }
-        }
 
-        private void RollDiceButton(object sender, EventArgs e)
-        {
-            //Random number between 1 and 20 and some math
-            Random random = new Random();
-            die = random.Next(1, 20);
-            MessageBox.Show("Random Die = " + die);
-            textBox3.Text = die.ToString();
-            die--;
-            MessageBox.Show("Random Die - 1 = " + die);
-            die = die + 2;
-            MessageBox.Show("Random Die + 1 = " + die);
-        }
 
-        private void IntegerCheckButton(object sender, EventArgs e)
-        {
-            //Check to see is there is a number in text box
-            if (int.TryParse(textBox1.Text, out number))
-            {
-                MessageBox.Show("Valid Number");
-            }
-            else
-            {
-                MessageBox.Show("Not a Valid Number");
-            }
-        }
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -189,21 +256,116 @@ namespace EventTest
 
         private void DrawCards_Click(object sender, EventArgs e)
         {
-            //Make a random
-            Random random = new Random();
-            //Call function
-            DrawCards(3);
-            //Draw cards function
-            void DrawCards(int i)
+
+            if (isPlayer == true)
             {
-                //A For Loop
-                for (int k = 0; k < i; k++)
+                //Make a random
+                Random random = new Random();
+                //Call function
+                DrawCards(3);
+                //Draw cards function
+                void DrawCards(int i)
                 {
-                    //Change card displays to the drawn card image
-                    cardDisplay[k].Image = images[random.Next(0, 13)];
+                    //A For Loop
+                    for (int k = 0; k < i; k++)
+                    {
+                        //Change card displays to the drawn card image
+                        cardDisplay[k].Image = images[random.Next(0, 13)];
+                    }
                 }
             }
+            else
+            {
+                PlayerCheckPopup();
+            }
+
         }
+
+        public void PlayerCheckPopup()
+        {
+            //Initialize new Form and components for popUP
+            Form popUp = new Form();
+            Label label = new Label();
+            TextBox textBox = new TextBox();
+            Button checkButton = new Button();
+            Button cancelButton = new Button();
+
+
+
+            label.Text = "Please Enter Player Name to play cards";
+
+            // Set the text of button1 to "OK".
+            checkButton.Text = "Check For Player Name";
+            // Set the text of button2 to "Cancel".
+            cancelButton.Text = "Cancel";
+            //Set location of all components
+            label.SetBounds(36, 36, 372, 13);
+            textBox.SetBounds(36, 86, 700, 20);
+            checkButton.SetBounds(228, 160, 160, 60);
+            cancelButton.SetBounds(400, 160, 160, 60);
+
+            // Make button1's dialog result OK.
+            checkButton.DialogResult = DialogResult.OK;
+            // Make button2's dialog result Cancel.
+            cancelButton.DialogResult = DialogResult.Cancel;
+
+
+            // Set the setting for the form popUp 
+            popUp.Text = "Player Check";
+            popUp.ClientSize = new Size(796, 307);
+            popUp.FormBorderStyle = FormBorderStyle.FixedDialog;
+            popUp.StartPosition = FormStartPosition.CenterScreen;
+            popUp.MinimizeBox = false;
+            popUp.MaximizeBox = false;
+
+            //Additional formating
+            // Define the border style of the form to a dialog box.
+            popUp.FormBorderStyle = FormBorderStyle.FixedDialog;
+            // Set the accept button of the form to button1.
+            popUp.AcceptButton = checkButton;
+            // Set the cancel button of the form to button2.
+            popUp.CancelButton = cancelButton;
+            // Set the start position of the form to the center of the screen.
+            popUp.StartPosition = FormStartPosition.CenterScreen;
+
+
+
+            //Add label, textbox and buttons to form
+            popUp.Controls.Add(label);
+            popUp.Controls.Add(textBox);
+            popUp.Controls.Add(checkButton);
+            popUp.Controls.Add(cancelButton);
+
+            //Show popUp
+            popUp.ShowDialog();
+
+
+
+            // Determine if the check button was clicked on the dialog box.
+            if (popUp.DialogResult == DialogResult.OK)
+            {
+                if (playerNames.Contains(textBox.Text) == true)
+                {
+                    MessageBox.Show("The player is in the system");
+                    isPlayer = true;
+                }
+                else
+                {
+                    MessageBox.Show("The player id need to be created");
+                }
+                // Optional: Call the Dispose method when you are finished with the dialog box.
+                popUp.Dispose();
+            }
+            else
+            {
+                // Display a message box indicating that the Cancel button was clicked.
+                MessageBox.Show("The Cancel button on the form was clicked.");
+                // Optional: Call the Dispose method when you are finished with the dialog box.
+                popUp.Dispose();
+            }
+
+        }
+
 
         private void label4_Click(object sender, EventArgs e)
         {
@@ -356,6 +518,65 @@ namespace EventTest
 
             }
 
+
+        }
+
+        private void Card3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox1.Text) != true && String.IsNullOrEmpty(textBox2.Text) != true && String.IsNullOrEmpty(textBox3.Text) != true)
+            {
+                Player player = new Player(textBox1.Text, textBox2.Text, textBox3.Text);
+                player.AddPlayer(player);
+                playerNames.Add(player.getpName());
+            }
+            else
+            {
+                MessageBox.Show("All fields must not be empty");
+            }
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox1.Text) != true && String.IsNullOrEmpty(textBox2.Text) != true && String.IsNullOrEmpty(textBox3.Text) != true)
+            {
+                if (int.TryParse(textBox5.Text, out gambleAmount))
+                {
+                    Gambler gambler = new Gambler(textBox1.Text, textBox2.Text, textBox3.Text, gambleAmount, monthCalendar1.SelectionStart);
+                    gambler.AddPlayer(gambler);
+                    if (gambler.getIs21() == true)
+                    {
+
+                        playerNames.Add(gambler.getpName());
+                    }
+                    else
+                    {
+                        MessageBox.Show("Player must be over 21 to gamble");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Gamble amount must be an number only");
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("All fields must not be empty");
+            }
+        }
+
+
+
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
+        {
 
         }
     }
